@@ -6,6 +6,7 @@ const Home = lazy(() => import('./Pages/Home'))
 const Login = lazy(() => import('./Pages/Login'))
 const Chat = lazy(() => import('./Pages/Chat'))
 const Groups = lazy(() => import('./Pages/Groups'))
+const NotFound = lazy(() => import('./Pages/NotFound'))
 
 let user = false
 
@@ -14,19 +15,25 @@ const App = () => {
     <BrowserRouter>
       <Routes>
 
+        <Route element={<ProtectRoute user={user} />} >
+
+          <Route path='/' element={<Home />} />
+          <Route path='/chat:chatid' element={<Chat />} />
+          <Route path='/groups' element={<Groups />} />
+
+        </Route>
+
         <Route
-          path='/'
+          path='/login'
           element={
-            <ProtectRoute user={user} >
-              <Home />
+            <ProtectRoute user={!user} redirect='/' >
+              <Login />
             </ProtectRoute>
           }
         />
 
-        <Route path='/chat:chatid' element={<Chat />} />
-        <Route path='/groups' element={<Groups />} />
+        <Route path='*' element={<NotFound />} />
 
-        <Route path='/login' element={<Login />} />
       </Routes>
     </BrowserRouter>
   )

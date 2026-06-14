@@ -5,10 +5,10 @@ import { CssBaseline } from '@mui/material'
 import { HelmetProvider } from 'react-helmet-async'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <>
     <HelmetProvider>
       <CssBaseline />
       <App />
     </HelmetProvider>
-  </StrictMode>,
+  </>,
 )
