@@ -8,7 +8,7 @@ const Chat = lazy(() => import('./Pages/Chat'))
 const Groups = lazy(() => import('./Pages/Groups'))
 const NotFound = lazy(() => import('./Pages/NotFound'))
 
-let user = false
+let user = true
 
 const App = () => {
   return (
