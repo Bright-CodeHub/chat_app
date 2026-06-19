@@ -10,13 +10,23 @@ const AppLayout = (WrappedComponent) => {
                 <Title />
                 <Header />
 
-                <Grid container spacing={3} >
+                <Grid container sx={{ height: 'calc(100vh - 4rem)' }} >
+
+                    <Grid size={4} sx={{ bgcolor: 'rgba(0,0,0,0.50)', height: '100%' }} >
+                        First
+                    </Grid>
+
+                    <Grid size={4} sx={{ bgcolor: 'rgba(0,0,0,0.50)', height: '100%' }} >
+                        <WrappedComponent />
+                    </Grid>
+
+                    <Grid size={4} sx={{ bgcolor: 'rgba(0,0,0,0.50)', height: '100%', display: { sx:'none' , sm:'block' } }} >
+                        First
+                    </Grid>
 
 
 
-                </Grid>
-
-
+                </Grid >
 
             </>
         )
