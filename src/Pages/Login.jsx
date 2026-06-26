@@ -27,10 +27,10 @@ const Login = () => {
     }
 
     return (
-        <div 
-        style={{
-            backgroundColor:'#f5f5f5'
-        }}
+        <div
+            style={{
+                backgroundColor: '#f5f5f5'
+            }}
         >
             <Container
                 component={'main'}
