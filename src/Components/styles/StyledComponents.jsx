@@ -18,6 +18,6 @@ export const Link = styled(LinkComponent)({
     color: "black",
     padding: '1rem',
     ":hover": {
-        backgroundColor: 'rgba(0,0,0,0.20)'
+        backgroundColor: 'rgba(0,0,0,0.1)'
     }
 })
