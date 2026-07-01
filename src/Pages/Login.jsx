@@ -143,8 +143,6 @@ const Login = () => {
                                         src={avatar.preview}
                                     />
 
-
-
                                     <IconButton
                                         component='label'
                                         sx={{
