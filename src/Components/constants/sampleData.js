@@ -14,3 +14,16 @@ export const sampleChats = [
         members: ['1', '2']
     },
 ]
+
+export const sampleUsers = [
+    {
+        avatar: 'avatar1',
+        name: 'user 1',
+        _id: 1
+    },
+    {
+        avatar: 'avatar2',
+        name: 'user 2 222222222222222222',
+        _id: 2
+    },
+]
