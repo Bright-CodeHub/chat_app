@@ -99,7 +99,7 @@ const Header = () => {
 const IconBtn = ({ title, func, icon }) => {
 
   return (
-    <Tooltip title={title} >
+    <Tooltip title={title}>
       <IconButton size='large' color='inherit' onClick={func} >
         {icon}
       </IconButton>
