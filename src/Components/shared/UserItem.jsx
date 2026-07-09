@@ -38,6 +38,8 @@ const UserItem = ({ user, handler, handlerIsLoading }) => {
                             bgcolor: 'primary.dark'
                         }
                     }}
+                    onClick={() => handler(_id)}
+                    disabled={handlerIsLoading}
                 >
                     <AddIcon />
                 </IconButton>
