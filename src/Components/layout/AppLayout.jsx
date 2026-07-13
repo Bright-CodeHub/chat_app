@@ -39,7 +39,7 @@ const AppLayout = (WrappedComponent) => {
 
                     </Grid>
 
-                    <Grid size={{ sm: 'grow' }} sx={{ bgcolor: 'rgb(113, 113, 113)', height: '100%', display: { xs: 'none', sm: 'block' } }} >
+                    <Grid size={{ sm: 'grow' }} sx={{ height: '100%', display: { xs: 'none', sm: 'block' } }} >
                         <WrappedComponent />
                     </Grid>
 

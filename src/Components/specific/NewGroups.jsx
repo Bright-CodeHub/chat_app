@@ -17,9 +17,14 @@ const NewGroups = () => {
                 ? prev.filter(elem => elem !== id)
                 : [...prev, id]))
     }
-    console.log(selectMembers)
+
+    // console.log(selectMembers)
 
     const submitHandler = () => {
+
+    }
+
+    const closeHandler = () => {
 
     }
 
@@ -39,11 +44,13 @@ const NewGroups = () => {
 
                 <Stack>
                     {
-                        members.map((users, idx) => {
+                        members.map((users) => {
                             return <UserItem
                                 user={users}
-                                key={idx}
-                                handler={selectMemberHandler}>
+                                key={users._id}
+                                handler={selectMemberHandler}
+                                isAdded={selectMembers.includes(users._id)}
+                            >
                             </UserItem>
                         })
                     }
@@ -58,6 +65,7 @@ const NewGroups = () => {
                     </Button>
 
                     <Button
+                        onClick={closeHandler}
                         sx={{ bgcolor: 'red', color: 'white' }} >
                         Cancel
                     </Button>
