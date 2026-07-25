@@ -44,3 +44,39 @@ export const sampleNotification = [
         _id: 2
     }
 ]
+
+export const sampleMessage = [
+    {
+        attachment: [
+            {
+                public_Id: 'qwe',
+                url: 'img'
+            }
+        ],
+        content: 'qertjkjsl sdfljsf sdlfsf',
+        _id: '123',
+        sender: {
+            _id: '1234',
+            name: 'Rohit'
+        },
+        chat: 'chatId',
+        createdAt: new Date()
+    },
+    {
+        attachment: [
+            {
+                public_Id: 'qwe',
+                url: 'img'
+            }
+        ],
+        content: 'qertjkjsl sdfljsf sdlfsf',
+        _id: '123',
+        sender: {
+            _id: '123',
+            name: 'Roshan'
+        },
+        chat: 'chatId',
+        createdAt: new Date()
+    }
+
+]
