@@ -1,6 +1,7 @@
-import { Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import React, { memo } from 'react'
 import { lightBlue } from '../constants/color'
+import { fileFormat } from '../../Lib/features'
 
 const MessageComp = ({ message, user }) => {
 
@@ -21,7 +22,6 @@ const MessageComp = ({ message, user }) => {
                 !sameSender && <Typography sx={{
                     color: lightBlue,
                     fontWeight: '600',
-
                 }}
                     variant='caption'
                 >{sender.name}</Typography>
@@ -29,6 +29,21 @@ const MessageComp = ({ message, user }) => {
 
             {
                 content && <Typography>{content}</Typography>
+            }
+
+            {
+                attachment.length > 0 && (
+                    attachment.map((elem, idx) => {
+                        const url = elem.url
+                        const file = fileFormat(url)
+
+                        return <Box>
+                            <a href="" target='_blank' download style={{ color: 'black' }} >
+
+                            </a>
+                        </Box>
+                    })
+                )
             }
 
         </div>
