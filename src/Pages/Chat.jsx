@@ -33,8 +33,8 @@ const Chat = () => {
 
 
         {
-          sampleMessage.map((elem) => {
-            return <MessageComp message={elem} user={user} />
+          sampleMessage.map((elem, idx) => {
+            return <MessageComp key={idx} message={elem} user={user} />
           })
         }
 

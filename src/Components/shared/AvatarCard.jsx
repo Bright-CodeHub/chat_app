@@ -1,5 +1,6 @@
 import { Avatar, AvatarGroup, Box, Stack } from '@mui/material'
 import React from 'react'
+import { transformImage } from '../../Lib/features'
 
 const AvatarCard = ({ avatar = [], max = 4 }) => {
     return (
@@ -8,7 +9,7 @@ const AvatarCard = ({ avatar = [], max = 4 }) => {
                 <Box sx={{ width: '5rem', height: '3rem' }}>
                     {
                         avatar.map((src, idx) => {
-                            return <Avatar key={idx} src={src} alt={`Avatar ${idx}`} sx={{
+                            return <Avatar key={idx} src={transformImage(src)} alt={`Avatar ${idx}`} sx={{
                                 width: '3rem',
                                 height: '3rem',
                                 position: 'absolute',

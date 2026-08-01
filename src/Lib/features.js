@@ -9,6 +9,10 @@ const fileFormat = (url = '') => {
     return 'File'
 }
 
+
+const transformImage = (url = '', width = 100) => url
+
 export {
-    fileFormat
+    fileFormat,
+    transformImage
 }

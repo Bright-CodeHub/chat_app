@@ -50,23 +50,23 @@ export const sampleMessage = [
         attachment: [
             {
                 public_Id: 'qwe',
-                url: 'img'
+                url: 'img.jpg'
             }
         ],
-        content: 'qertjkjsl sdfljsf sdlfsf',
+        content: 'qertjkjsl sdfljsf',
         _id: '123',
         sender: {
             _id: '1234',
             name: 'Rohit'
         },
         chat: 'chatId',
-        createdAt: new Date()
+        createdAt: new Date(new Date().setDate(new Date().getDate() - 2))
     },
     {
         attachment: [
             {
                 public_Id: 'qwe',
-                url: 'img'
+                url: 'img.mp3'
             }
         ],
         content: 'qertjkjsl sdfljsf sdlfsf',
@@ -76,7 +76,7 @@ export const sampleMessage = [
             name: 'Roshan'
         },
         chat: 'chatId',
-        createdAt: new Date()
+        createdAt: new Date(new Date().setHours(new Date().getHours() - 5))
     }
 
 ]
