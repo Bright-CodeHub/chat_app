@@ -1,6 +1,6 @@
 import { Done as DoneIcon, Edit as EditIcon, KeyboardBackspace as KeyboardBackspaceIcon, Menu as MenuIcon } from '@mui/icons-material'
-import { Box, Drawer, Grid, IconButton, Stack, TextField, Tooltip, Typography } from '@mui/material'
-import React, { memo, useState } from 'react'
+import { Box, Button, Drawer, Grid, IconButton, Stack, TextField, Tooltip, Typography } from '@mui/material'
+import React, { memo, useEffect, useState } from 'react'
 import { gray1, gray2, matBlack, matBlackHover } from '../Components/constants/color'
 import { useNavigate, Navigate, useSearchParams } from 'react-router-dom'
 import { Link } from '../Components/styles/StyledComponents'
@@ -10,12 +10,13 @@ import { sampleChats } from '../Components/constants/sampleData'
 const Groups = () => {
 
     const chatId = useSearchParams()[0].get('group')
-    console.log(chatId)
 
     const navigate = useNavigate()
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
     const [isEdit, setIsEdit] = useState(false)
+    const [groupName, setGroupName] = useState('')
+    const [groupNameUpdatedValue, setGroupNameUpdatedValue] = useState('')
 
     const navigateBack = () => {
         navigate('/')
@@ -26,6 +27,21 @@ const Groups = () => {
     }
 
     const handelMobileClose = () => setIsMobileMenuOpen(false)
+
+    const updateGroupName = () => {
+        setIsEdit(false)
+    }
+
+    useEffect(() => {
+        setGroupName(`Group Name ${chatId}`)
+        setGroupNameUpdatedValue(`Group Name ${chatId}`)
+
+        return () => {
+            setGroupName('')
+            setGroupNameUpdatedValue('')
+            setIsEdit(false)
+        }
+    }, [chatId])
 
     const IconBtns = <>
 
@@ -71,18 +87,40 @@ const Groups = () => {
     >
         {
             isEdit ? <>
-                <TextField size='small' />
-                <IconButton>
+                <TextField
+                    size='small'
+                    value={groupNameUpdatedValue}
+                    onChange={(e) => setGroupNameUpdatedValue(e.target.value)}
+                />
+                <IconButton onClick={updateGroupName} >
                     <DoneIcon />
                 </IconButton>
             </>
                 : <>
-                    <Typography>Group Name</Typography>
+                    <Typography>{groupName}</Typography>
                     <IconButton onClick={() => setIsEdit(prev => !prev)}>
                         <EditIcon />
                     </IconButton>
                 </>
         }
+    </Stack>
+
+    const ButtonGroup = <Stack
+        direction={{
+            xs: 'column-reverse',
+            sm: 'row'
+        }}
+        sx={{
+            padding: {
+                xs: '0',
+                sm: '1rem',
+                md: '1rem 4rem'
+            }
+        }}
+        spacing={'1rem'}
+    >
+        <Button size='small' variant='contained' color='error'  >Delete Group</Button>
+        <Button size='small' variant='contained' >Add Member</Button>
     </Stack>
 
     return (
@@ -111,7 +149,37 @@ const Groups = () => {
                     bgcolor: gray1
                 }} >
                 {IconBtns}
-                {GroupName}
+                {groupName &&
+                    <>
+                        {GroupName}
+                        <Typography
+                            variant='body1'
+                            sx={{ margin: '2rem', alignSelf: 'flex-start' }} >
+                            Members
+                        </Typography>
+
+                        <Stack
+                            spacing={'2rem'}
+                            sx={{
+                                width: '100%',
+                                maxWidth: '45rem',
+                                height: '50vh',
+                                boxSizing: 'border-box',
+                                overflow: 'auto',
+                                bgcolor: 'lightcoral',
+                                padding: {
+                                    xs: '0',
+                                    sm: '1rem',
+                                    md: '1rem 4rem'
+                                },
+                                mb: '1rem'
+                            }}>
+                            Members
+                        </Stack>
+
+                        {ButtonGroup}
+                    </>
+                }
             </Grid>
 
             <Drawer open={isMobileMenuOpen} onClose={handelMobileClose} sx={{
