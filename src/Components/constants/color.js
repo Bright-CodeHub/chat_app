@@ -13,3 +13,11 @@ export const gray1 = 'rgb(120, 120, 120)'
 export const gray2 = 'rgb(150, 150, 150)'
 export const gray3 = 'rgb(170, 170, 170)'
 
+
+// Of white
+
+export const OffWhite = 'rgb(240, 240, 240)'
+
+
+export const black = 'rgba(0, 0, 0, 0.80)'
+export const blackHover = 'rgba(0, 0, 0, 0.90)'
