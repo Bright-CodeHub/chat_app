@@ -1,6 +1,6 @@
 export const sampleChats = [
     {
-        avatar: ['img'],
+        avatar: ['img', 'img'],
         name: 'Orange',
         _id: '1',
         groupChat: false,
@@ -14,61 +14,20 @@ export const sampleChats = [
         members: ['1', '2']
     },
     {
-        avatar: ['img', 'img', 'img'],
-        name: 'Apple',
-        _id: '2',
+        avatar: ['img', 'img', 'img',],
+        name: 'Grapes',
+        _id: '3',
         groupChat: true,
         members: ['1', '2']
     },
     {
-        avatar: ['img', 'img', 'img'],
-        name: 'Apple',
-        _id: '2',
+        avatar: ['img', 'img', 'img', 'img', 'img'],
+        name: 'Banana',
+        _id: '4',
         groupChat: true,
-        members: ['1', '2']
+        members: ['1', '2', '3']
     },
-    {
-        avatar: ['img', 'img', 'img'],
-        name: 'Apple',
-        _id: '2',
-        groupChat: true,
-        members: ['1', '2']
-    },
-    {
-        avatar: ['img', 'img', 'img'],
-        name: 'Apple',
-        _id: '2',
-        groupChat: true,
-        members: ['1', '2']
-    },
-    {
-        avatar: ['img', 'img', 'img'],
-        name: 'Apple',
-        _id: '2',
-        groupChat: true,
-        members: ['1', '2']
-    },
-    {
-        avatar: ['img', 'img', 'img'],
-        name: 'Apple',
-        _id: '2',
-        groupChat: true,
-        members: ['1', '2']
-    },
-    {
-        avatar: ['img', 'img', 'img'],
-        name: 'Apple',
-        _id: '2',
-        groupChat: true,
-        members: ['1', '2']
-    },
-    {
-        avatar: ['img', 'img', 'img'],
-        name: 'Apple',
-        _id: '2',
-        groupChat: true,
-        members: ['1', '2']
-    },
+
 ]
 
 export const sampleUsers = [

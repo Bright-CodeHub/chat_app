@@ -4,7 +4,7 @@ import ChatItem from '../shared/ChatItem'
 
 const ChatList = ({ w = '100%', chats = [], chatId, onlineUsers = [], newMessagesAlert = [{ chatId: '', count: 0 }], handleDeleteChat }) => {
     return (
-        <Stack sx={{ width: w }} >
+        <Stack sx={{ width: w,overflow:'auto', height:'100%' }} >
             {
                 chats?.map((data, idx) => {
 

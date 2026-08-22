@@ -82,7 +82,10 @@ const Groups = () => {
                 right: '1rem'
             }}>
             <IconButton sx={{
-                color: 'white'
+                color: black,
+                ":hover": {
+                    bgcolor: 'rgba(208, 208, 208, 0.69)'
+                }
             }}
                 onClick={handelMobile} >
                 <MenuIcon />
@@ -259,7 +262,7 @@ const Groups = () => {
 }
 
 const GroupList = ({ w = '100%', myGroups = [], chatId }) => (
-    <Stack sx={{ width: w }} >
+    <Stack sx={{ width: w, overflow: 'auto', height: '100vh' }} >
         {
             myGroups.length > 0
                 ? (
