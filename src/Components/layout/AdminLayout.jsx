@@ -1,11 +1,11 @@
 import { Box, Drawer, Grid, IconButton, Stack, Typography } from '@mui/material'
 import React, { useState } from 'react'
-import { black, blackHover, gray1, gray2 } from '../constants/color'
+import { black, blackHover, gray1, gray2, OffWhite } from '../constants/color'
 import { Close as CloseIcon, Dashboard as DashboardIcon, ExitToApp as ExitToAppIcon, Group as GroupIcon, ManageAccounts as ManageAccountsIcon, Menu as MenuIcon, Message as MessageIcon } from '@mui/icons-material';
-import { useLocation } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import { Link } from '../styles/StyledComponents';
-import { color } from 'chart.js/helpers';
 
+const isAdmin = true
 
 export const adminTabs = [
     {
@@ -15,12 +15,12 @@ export const adminTabs = [
     },
     {
         name: 'Users',
-        path: '/admin/users-management',
+        path: '/admin/users',
         icon: <ManageAccountsIcon />,
     },
     {
         name: 'Chats',
-        path: '/admin/chat-management',
+        path: '/admin/chats',
         icon: <GroupIcon />,
     },
     {
@@ -42,8 +42,10 @@ const AdminLayout = ({ children }) => {
         setIsMobile(prev => !prev)
     }
 
+    if (!isAdmin) return <Navigate to={'/admin'} />
+
     return (
-        <Grid container sx={{ minHeight: '100vh' }} >
+        <Grid container sx={{ minHeight: '100vh', bgcolor: OffWhite }} >
 
             <Box sx={{
                 display: {
@@ -59,7 +61,7 @@ const AdminLayout = ({ children }) => {
                 </IconButton>
             </Box>
 
-            <Drawer open={isMobile} onClose={handleClose}>
+            <Drawer open={isMobile} onClose={handleClose} sx={{ display: { xs: 'block', md: 'none' } }} >
                 <SideBar w={'50vw'} />
             </Drawer>
 
@@ -68,7 +70,9 @@ const AdminLayout = ({ children }) => {
                     xs: 'none',
                     md: 'block'
                 },
-                bgcolor: gray1
+                borderRight: '2px solid rgb(190, 190, 190)',
+                borderTopRightRadius: '50px',
+                borderBottomRightRadius: '50px'
             }}
                 size={{
                     md: 4,
@@ -80,7 +84,6 @@ const AdminLayout = ({ children }) => {
 
             <Grid
                 sx={{
-                    bgcolor: gray2
                 }}
                 size={{
                     xs: 12,
