@@ -4,6 +4,7 @@ import { Box, Button, Container, Paper, Stack, Typography } from '@mui/material'
 import { AdminPanelSettings as AdminPanelSettingsIcon, Group as GroupIcon, Message as MessageIcon, Notifications as NotificationsIcon, Person as PersonIcon } from '@mui/icons-material'
 import moment from 'moment'
 import { black } from '../../Components/constants/color'
+import { DoughnutChart, LineChart } from '../../Components/specific/Charts'
 
 const Dashboard = () => {
 
@@ -62,7 +63,7 @@ const Dashboard = () => {
                         }}>
                         <Typography variant='h5' sx={{ margin: '1rem 0' }}>Last Messages</Typography>
 
-                        {'Chart'}
+                        {<LineChart value={[1, 7, 3, 5]} />}
                     </Paper>
 
                     <Paper
@@ -80,7 +81,7 @@ const Dashboard = () => {
                             , height: '10rem'
                         }}>
 
-                        {'D Chart'}
+                        {<DoughnutChart />}
 
                         <Stack
                             direction={'row'}
