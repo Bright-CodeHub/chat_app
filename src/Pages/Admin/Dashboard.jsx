@@ -5,6 +5,7 @@ import { AdminPanelSettings as AdminPanelSettingsIcon, Group as GroupIcon, Messa
 import moment from 'moment'
 import { black } from '../../Components/constants/color'
 import { DoughnutChart, LineChart } from '../../Components/specific/Charts'
+import { CurveButton, SearchField } from '../../Components/styles/StyledComponents'
 
 const Dashboard = () => {
 
@@ -18,9 +19,9 @@ const Dashboard = () => {
 
                 <AdminPanelSettingsIcon sx={{ fontSize: '2rem' }} />
 
-                <input type="text" />
+                <SearchField sx={{ width: { xs: '28vw', sm: '23vw', md: '15vw' } }} placeholder='Search...' />
 
-                <Button>sd</Button>
+                <CurveButton>Search</CurveButton>
 
                 <Box sx={{ flexGrow: 1 }}></Box>
 

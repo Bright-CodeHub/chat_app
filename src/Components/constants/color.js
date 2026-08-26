@@ -12,6 +12,7 @@ export const matBlackHover = 'rgba(210, 188, 188, 0.50)'
 export const gray1 = 'rgb(120, 120, 120)'
 export const gray2 = 'rgb(150, 150, 150)'
 export const gray3 = 'rgb(170, 170, 170)'
+export const gray4 = 'rgba(170, 170, 170, 0.30)'
 
 
 // Of white
