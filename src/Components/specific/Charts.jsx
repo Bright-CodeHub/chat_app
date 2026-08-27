@@ -2,6 +2,7 @@ import React from 'react'
 import { ArcElement, CategoryScale, Chart, Filler, Legend, LinearScale, LineElement, PointElement, Tooltip } from 'chart.js';
 import { Line, Doughnut } from 'react-chartjs-2';
 import { getLast7Days } from '../../Lib/features';
+import { black, orange } from '../constants/color';
 
 Chart.register(
     CategoryScale,
@@ -44,7 +45,7 @@ const labels = getLast7Days()
 const LineChart = ({ value = [] }) => {
 
     const data = {
-        labels: labels,
+        labels,
         datasets: [
             {
                 data: value,
@@ -56,16 +57,37 @@ const LineChart = ({ value = [] }) => {
     }
 
     return (
-        <Line data={data} options={lineChartOptions} >Charts</Line>
+        <Line data={data} options={lineChartOptions} />
     )
 }
 
-const DoughnutChart = () => {
+const doughnutChartOptions = {
+    responsive: true,
+    plugins: {
+        legend: {
+            display: false
+        }
+    },
+    cutout: 90
+}
+
+
+const DoughnutChart = ({ value = [], labels }) => {
+
+    const data = {
+        labels,
+        datasets: [
+            {
+                data: value,
+                backgroundColor: ['rgba(94, 69, 255, 0.85)', 'rgba(250, 30, 30, 0.75)'],
+                borderColor: 'rgba(210, 210, 210, 0.60)',
+                offset: 5
+            },
+        ]
+    }
 
     return (
-        <div>
-
-        </div>
+        <Doughnut style={{ zIndex: 1 }} data={data} options={doughnutChartOptions} />
     )
 }
 

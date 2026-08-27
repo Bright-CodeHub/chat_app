@@ -76,19 +76,17 @@ const AdminLayout = ({ children }) => {
             }}
                 size={{
                     md: 4,
-                    lg: 3
+                    // lg: 3
                 }}
             >
                 <SideBar />
             </Grid>
 
             <Grid
-                sx={{
-                }}
                 size={{
                     xs: 12,
                     md: 8,
-                    lg: 9
+                    // lg: 9
                 }}
             >
                 {children}

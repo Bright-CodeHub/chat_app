@@ -43,12 +43,11 @@ export const SearchField = styled('input')({
 })
 
 export const CurveButton = styled('button')({
-    padding: '0.9rem 2rem',
     borderRadius: '1.5rem',
     border: 'none',
     outline: 'none',
+    fontSize:'1rem',
     cursor: 'pointer',
-    fontSize: '1rem',
     color: 'white',
     backgroundColor: black,
     ":hover": {

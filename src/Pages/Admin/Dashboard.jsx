@@ -21,7 +21,7 @@ const Dashboard = () => {
 
                 <SearchField sx={{ width: { xs: '28vw', sm: '23vw', md: '15vw' } }} placeholder='Search...' />
 
-                <CurveButton>Search</CurveButton>
+                <CurveButton sx={{ p: { xs: '0.9rem 1rem', md: '0.9rem 1.5rem' }, fontSize: { xs: '0.7rem', sm: '1rem' } }} >Search</CurveButton>
 
                 <Box sx={{ flexGrow: 1 }}></Box>
 
@@ -53,36 +53,34 @@ const Dashboard = () => {
 
                 {Appbar}
 
-                <Stack direction={'row'} spacing={'2rem'} sx={{ flexWrap: 'wrap' }} >
+                <Stack direction={{ xs: 'column', lg: 'row' }} sx={{ flexWrap: 'wrap', justifyContent: 'center', alignItems: { xs: 'center', lg: 'stretch' }, gap: '2rem' }} >
                     <Paper
                         elevation={3}
                         sx={{
                             width: '100%',
-                            maxWidth: '45rem',
+                            maxWidth: '40rem',
                             padding: '2rem 3rem',
                             borderRadius: '1rem'
                         }}>
                         <Typography variant='h5' sx={{ margin: '1rem 0' }}>Last Messages</Typography>
 
-                        {<LineChart value={[1, 7, 3, 5]} />}
+                        {<LineChart value={[2, 3, 7, 4]} />}
                     </Paper>
 
                     <Paper
                         elevation={3}
                         sx={{
                             width: { xs: '100%', sm: '50%' },
-                            maxWidth: '25rem',
+                            maxWidth: '20rem',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
                             padding: '1rem',
                             borderRadius: '1rem',
                             position: 'relative'
-
-                            , height: '10rem'
                         }}>
 
-                        {<DoughnutChart />}
+                        {<DoughnutChart labels={['Single Chats', 'Group Chats']} value={[23, 66]} />}
 
                         <Stack
                             direction={'row'}
@@ -92,7 +90,7 @@ const Dashboard = () => {
                                 height: '100%',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                position: 'absolute'
+                                position: 'absolute',
                             }}>
                             <GroupIcon /> <Typography>Vs</Typography> <PersonIcon />
 
