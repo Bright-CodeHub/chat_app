@@ -95,3 +95,25 @@ export const sampleMessage = [
     }
 
 ]
+
+export const dashboardData = {
+    user: [
+        {
+            name: 'user 1',
+            avatar: 'avatar1',
+            _id: '1',
+            username: 'user_1',
+            friends: 5,
+            groups: 2
+        },
+        {
+            name: 'user 2',
+            avatar: 'avatar1',
+            _id: '2',
+            username: 'user_2',
+            friends: 10,
+            groups: 4
+        },
+    ]
+}
+
