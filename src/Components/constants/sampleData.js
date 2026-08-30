@@ -114,6 +114,35 @@ export const dashboardData = {
             friends: 10,
             groups: 4
         },
+    ],
+
+    chats: [
+        {
+            name: 'user 1',
+            avatar: ['avatar 1'],
+            _id: '1',
+            groupChat: true,
+            members: [{ _id: '1', avatar: 'avatar 1' }, { _id: '2', avatar: 'avatar 2' }],
+            totalMembers: 2,
+            totalMessages: 20,
+            creator: {
+                name: 'user 1',
+                avatar: 'avatar 1'
+            }
+        },
+        {
+            name: 'user 2',
+            avatar: ['avatar 2'],
+            _id: '2',
+            groupChat: true,
+            members: [{ _id: '1', avatar: 'avatar 1' }, { _id: '2', avatar: 'avatar 2' }],
+            totalMembers: 4,
+            totalMessages: 40,
+            creator: {
+                name: 'user 2',
+                avatar: 'avatar 1'
+            }
+        },
     ]
 }
 
