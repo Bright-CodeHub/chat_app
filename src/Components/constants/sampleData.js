@@ -118,7 +118,7 @@ export const dashboardData = {
 
     chats: [
         {
-            name: 'user 1',
+            name: 'Group 1',
             avatar: ['avatar 1'],
             _id: '1',
             groupChat: true,
@@ -131,17 +131,49 @@ export const dashboardData = {
             }
         },
         {
-            name: 'user 2',
+            name: 'Group 2',
             avatar: ['avatar 2'],
             _id: '2',
             groupChat: true,
             members: [{ _id: '1', avatar: 'avatar 1' }, { _id: '2', avatar: 'avatar 2' }],
-            totalMembers: 4,
+            totalMembers: 2,
             totalMessages: 40,
             creator: {
                 name: 'user 2',
                 avatar: 'avatar 1'
             }
+        }
+    ],
+
+    messages: [
+        {
+            attachments: [
+                {
+                    id: '1',
+                    url: 'avatar 1'
+                }
+            ],
+            content: 'qwkld jfdfjf sdfksdflks',
+            _id: '1',
+            sender: {
+                avatar: 'avatar 1',
+                name: 'user 1'
+            },
+            chat: 'chatId',
+            groupChat: false,
+            createdAt: Date.now()
+        },
+        {
+            attachment: [],
+            content: 'qwkld jfdfjf ',
+            _id: '2',
+            sender: {
+                avatar: 'avatar 2',
+                name: 'user 2'
+            },
+            groupChat: false,
+            chat: 'chatId',
+            createdAt: Date.now()
         },
     ]
 }
